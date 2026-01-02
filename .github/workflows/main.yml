@@ -1,0 +1,30 @@
+name: Xmake CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Xmake
+      # Use the official action to install the specified Xmake version
+      uses: xmake-io/github-action-setup-xmake@v1
+      with:
+        xmake-version: 'latest' # You can specify a version like '2.9.7'
+
+    - name: Configure and Build project
+      # Run xmake commands directly in the shell
+      run: xmake -m releasedbg 
+      # Optional: specify configuration options, e.g., 'xmake f -m debug'
+
+    - name: Run tests
+      # Assuming you have a 'test' target defined in your xmake.lua file
+      run: xmake run test
