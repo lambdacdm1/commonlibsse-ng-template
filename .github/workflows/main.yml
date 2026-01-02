@@ -22,7 +22,7 @@ jobs:
         xmake-version: 'latest'
 
     - name: Configure project
-      run: xmake config -m releasedbg
+      run: xmake config -m releasedbg -y
     
     - name: Build project
       run: xmake -m releasedbg -y
