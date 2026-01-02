@@ -5,8 +5,8 @@ set_xmakever("2.8.2")
 includes("lib/commonlibsse-ng")
 
 -- set project
-set_project("commonlibsse-ng-template")
-set_version("0.0.0")
+set_project("TEMPLATE_NAME")
+set_version("VERSION_NUMBER")
 set_license("GPL-3.0")
 
 -- set defaults
@@ -21,19 +21,21 @@ add_rules("mode.debug", "mode.releasedbg")
 add_rules("plugin.vsxmake.autoupdate")
 
 -- targets
-target("commonlibsse-ng-template")
+target("TEMPLATE_NAME")
     -- add dependencies to target
     add_deps("commonlibsse-ng")
+    add_requires("simpleini")
+    add_packages("simpleini")
 
     -- add commonlibsse-ng plugin
     add_rules("commonlibsse-ng.plugin", {
-        name = "commonlibsse-ng-template",
-        author = "libxse",
-        description = "SKSE64 plugin template using CommonLibSSE-NG"
+        name = "TEMPLATE_NAME",
+        author = "AUTHOR_NAME",
+        description = "TEMPLATE_DESCRIPTION",
     })
 
     -- add src files
     add_files("src/**.cpp")
-    add_headerfiles("src/**.h")
-    add_includedirs("src")
-    set_pcxxheader("src/pch.h")
+    add_headerfiles("include/**.h")
+    add_includedirs("include")
+    set_pcxxheader("inclue/pch.h")
