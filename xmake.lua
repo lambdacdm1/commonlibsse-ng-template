@@ -3,10 +3,11 @@ set_xmakever("2.8.2")
 
 -- includes
 includes("lib/commonlibsse-ng")
+add_requires("simpleini")
 
 -- set project
 set_project("TEMPLATE_NAME")
-set_version("VERSION_NUMBER")
+set_version("0.0.1")
 set_license("GPL-3.0")
 
 -- set defaults
@@ -24,7 +25,6 @@ add_rules("plugin.vsxmake.autoupdate")
 target("TEMPLATE_NAME")
     -- add dependencies to target
     add_deps("commonlibsse-ng")
-    add_requires("simpleini")
     add_packages("simpleini")
 
     -- add commonlibsse-ng plugin

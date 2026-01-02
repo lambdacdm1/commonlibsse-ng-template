@@ -4,7 +4,6 @@ from subprocess import run
 
 #### Edit these globals
 PROJECT_NAME = input("Project Name: ")
-PROJECT_VERSION = "0.0.1"
 PROJECT_AUTHOR = input("Author Name: ")
 PROJECT_DESCRIPTION = input("Project Description: ")
 ####
@@ -12,11 +11,10 @@ PROJECT_DESCRIPTION = input("Project Description: ")
 
 
 PROJECT_NAME_STR = "TEMPLATE_NAME"
-PROJECT_VERSION_STR = "VERSION_NUMBER"
 PROJECT_AUTHOR_STR = "AUTHOR_NAME"
 PROJECT_DESCRIPTION_STR = "TEMPLATE_DESCRIPTION"
 
-SOLUTION_CMD = "xmake project -k vsxmake"
+SOLUTION_CMD = "xmake project -k vsxmake -y"
 BUILD_CMD = "xmake build"
 
 
@@ -26,8 +24,6 @@ def update_xmake():
 
     if PROJECT_NAME:
         xmake = xmake.replace(PROJECT_NAME_STR, PROJECT_NAME)
-    if PROJECT_VERSION:
-        xmake = xmake.replace(PROJECT_VERSION_STR, PROJECT_VERSION)
     if PROJECT_AUTHOR:
         xmake = xmake.replace(PROJECT_AUTHOR_STR, PROJECT_AUTHOR)
     if PROJECT_DESCRIPTION:
