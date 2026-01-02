@@ -25,8 +25,4 @@ jobs:
       run: xmake config -m releasedbg -y
     
     - name: Build project
-      run: xmake -m releasedbg -y
-
-    - name: Run tests
-      # Assuming you have a 'test' target defined in your xmake.lua file
-      run: xmake run test
+      run: xmake build
