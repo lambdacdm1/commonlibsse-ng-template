@@ -1,12 +1,8 @@
-#include "Hooks.h"
-#include "Settings.h"
-#include "Events.h"
+#include "settings.h"
 
 void Listener(SKSE::MessagingInterface::Message* message) noexcept
 {
     if (message->type == SKSE::MessagingInterface::kDataLoaded) {
-        Hooks::Install();
-        Events::InputEventHandler::Register();
     }
 }
 

@@ -1,4 +1,5 @@
 #include "settings.h"
+#include "SimpleIni.h"
 
 void Settings::LoadSettings() noexcept
 {

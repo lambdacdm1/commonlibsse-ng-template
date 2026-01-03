@@ -8,7 +8,7 @@ This is a basic plugin template using CommonLibSSE-NG.
 
 ## Getting Started
 ```bat
-git clone --recurse-submodules https://github.com/libxse/commonlibsse-ng-template
+git clone --recurse-submodules https://github.com/lambdacdm1/commonlibsse-ng-template
 cd commonlibsse-ng-template
 ```
 
@@ -41,6 +41,3 @@ If you want to upgrade the project's dependencies, run the following commands:
 xmake repo --update
 xmake require --upgrade
 ```
-
-## Documentation
-Please refer to the [Wiki](../../wiki/Home) for more advanced topics.
