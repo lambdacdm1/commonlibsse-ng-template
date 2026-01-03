@@ -1,10 +1,9 @@
 name: Xmake CI
 
-on:
+on: 
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    tags:
+    - '*'
 
 jobs:
   build-and-test:
@@ -26,3 +25,10 @@ jobs:
     
     - name: Build project
       run: xmake build
+
+    - name: Release By Tag
+    - uses: actions/checkout@v4
+    - uses: ncipollo/release-action@v1
+      with:
+        artifacts: "build/windows/x64/releasedbg/*.dll,build/windows/x64/releasedbg/*.pdb"
+        generateReleaseNotes: true  # Auto-generate release notes based on PRs and commits
