@@ -27,7 +27,7 @@ jobs:
       run: xmake build
  
     - name: Release By Tag
-    - uses: ncipollo/release-action@v1
+      uses: ncipollo/release-action@v1
       with:
         artifacts: "build/windows/x64/releasedbg/*.dll,build/windows/x64/releasedbg/*.pdb"
         generateReleaseNotes: true  # Auto-generate release notes based on PRs and commits
