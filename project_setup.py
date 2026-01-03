@@ -49,6 +49,14 @@ def update_settings():
     with open(join("src", "Settings.cpp"), "w", encoding="utf-8") as f:
         f.write(settings_cpp)
 
+def update_github_action():
+    with open(join(".github", "workflows", "main.yml"), "r", encoding="utf-8") as f:
+        main_yml = f.read()
+
+    main_yml = main_yml.replace("TEMPLATE_NAME", PROJECT_NAME)
+
+    with open(join(".github", "workflows", "main.yml"), "w", encoding="utf-8") as f:
+        f.write(main_yml)
 
 def run_commands():
     run(SOLUTION_CMD, shell=True)

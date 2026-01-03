@@ -29,5 +29,6 @@ jobs:
     - name: Release By Tag
       uses: ncipollo/release-action@v1
       with:
-        artifacts: "build/windows/x64/releasedbg/*.dll,build/windows/x64/releasedbg/*.pdb"
+        artifacts: "build/windows/x64/releasedbg/TEMPLATE_NAME.dll,build/windows/x64/releasedbg/TEMPLATE_NAME.pdb"
         generateReleaseNotes: true  # Auto-generate release notes based on PRs and commits
+        makeLatest: true
